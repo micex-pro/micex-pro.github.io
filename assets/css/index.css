@@ -1,0 +1,183 @@
+/* 
+==============
+Fonts 
+==============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;500&family=Sono&display=swap");
+
+/*
+==============
+Universal Selector
+==============
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+==============
+Variables
+==============
+*/
+
+:root {
+  /* Converts rem units from 16px to 10px */
+  font-size: 62.5%;
+
+  --clr-red: #f24646;
+  --clr-dark-red: #e02b20;
+  --clr-white: rgb(231, 231, 231);
+
+  --clr-primary-black-1: rgb(51, 51, 51);
+  --clr-primary-black-5: rgb(35, 35, 35);
+
+  --clr-grey-1: #102a42;
+  --clr-grey-5: #617d98;
+
+  --ff-primary: "Oswald", sans-serif;
+  --ff-secondary: "Sono", sans-serif;
+
+  --line-height: 1.5;
+  --letter-spacing: 0.4rem;
+
+  --transition: all 0.3s linear;
+
+  --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  --radius: 0.8rem;
+}
+
+/*
+==============
+Body
+==============
+*/
+
+body {
+  /* 1.6rem = 16px means the deault for the browsers */
+  font-size: 1.6rem;
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+
+  background: var(--clr-primary-black-1);
+  color: var(--clr-grey-1);
+
+  font-family: var(--ff-primary);
+  font-size: 1.4rem;
+
+  line-height: var(--line-height);
+}
+
+/*
+==============
+Global CSS
+==============
+*/
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--letter-spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 1.2rem;
+}
+
+.red {
+  filter: invert(34%) sepia(94%) saturate(5487%) hue-rotate(350deg)
+    brightness(86%) contrast(140%);
+}
+
+/*
+==============
+Header
+==============
+*/
+
+.header-fade {
+  height: 4rem;
+  min-width: 100vw;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgba(51, 51, 51, 0.5),
+    rgba(51, 51, 51, 1)
+  );
+
+  position: absolute;
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 4rem);
+}
+
+.header-logo {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+  transition: var(--transition);
+  max-width: 75rem;
+  opacity: 0.45;
+}
+
+.header-dotted {
+  position: absolute;
+  z-index: -10;
+  width: 100%;
+  min-height: calc(100vh - 4rem);
+  background-size: 2rem 2rem;
+  background-image: radial-gradient(
+    rgba(231, 231, 231, 0.08) 10%,
+    transparent 11%
+  );
+  transition: var(--transition);
+}
+
+/*
+==============
+Footer
+==============
+*/
+
+.footer {
+  height: 4rem;
+  min-width: 100vw;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(51, 51, 51, 0.5),
+    rgba(51, 51, 51, 1)
+  );
+
+  position: relative;
+}
+
+.footer h1 {
+  color: white;
+  font-family: var(--ff-secondary);
+  font-weight: 100;
+  font-size: 1.5rem;
+  position: absolute;
+}
